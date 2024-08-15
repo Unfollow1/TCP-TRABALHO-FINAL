@@ -1,7 +1,7 @@
 package Services;
 
 import Constants.ConstraintsConstants;
-import Constants.MessagesToUserConstants;
+import Constants.AlertsConstants;
 import Constants.TextConstants;
 
 public class MusicValidationService implements IMusicValidationService {
@@ -9,10 +9,10 @@ public class MusicValidationService implements IMusicValidationService {
 
     public boolean validateString(String text) {
         if (isEmptyString(text)) {
-            setErrorMessage(MessagesToUserConstants.EMPTY_STRING_MESSAGE);
+            setErrorMessage(AlertsConstants.EMPTY_STRING_MESSAGE);
             return false;
         } else if (isTooLongString(text)) {
-            setErrorMessage(MessagesToUserConstants.TOO_LONG_STRING_MESSAGE);
+            setErrorMessage(AlertsConstants.TOO_LONG_STRING_MESSAGE);
             return false;
         }
         return true;
@@ -28,7 +28,7 @@ public class MusicValidationService implements IMusicValidationService {
 
     public boolean validateInstrument(String instrument) {
         if (isNullInstrument(instrument)) {
-            setErrorMessage(MessagesToUserConstants.NULL_INSTRUMENT);
+            setErrorMessage(AlertsConstants.NULL_INSTRUMENT);
             return false;
         }
         return true;

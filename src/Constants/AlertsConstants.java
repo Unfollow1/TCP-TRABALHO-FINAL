@@ -1,6 +1,6 @@
 package Constants;
 
-public class MessagesToUserConstants {
+public class AlertsConstants {
     public final static String ERROR_MESSAGE = "Erro!";
     public final static String EMPTY_STRING_MESSAGE = "Não é possível musicar um texto vazio";
     public final static String TOO_LONG_STRING_MESSAGE = "O texto não pode ter mais de 1000 caracteres";

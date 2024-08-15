@@ -1,5 +1,5 @@
 package Services;
 
-public interface ITextConvertorService {
+public interface ITextConvertionService {
     String convert(String raw_text, int initialBpm, int initialInstrument);
 }

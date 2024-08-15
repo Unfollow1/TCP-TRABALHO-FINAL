@@ -1,11 +1,11 @@
 package Tests;
 
-import Services.TextConvertorService;
+import Services.TextConvertionService;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class TextConvertorServiceTest {
-    TextConvertorService textConvertor = new TextConvertorService();
+public class TextConvertionServiceTest {
+    TextConvertionService textConvertor = new TextConvertionService();
 
     @Test
     public void testEmptyString() {

@@ -1,12 +1,12 @@
 package MusicManager;
 
-import Services.TextConvertorService;
+import Services.TextConvertionService;
 
 public class Music implements IMusic {
     public String musicString;
 
     public void createMusicFromText(String rawText, int initialBpm, int initialInstrument) {
-        TextConvertorService textConvertor = new TextConvertorService();
+        TextConvertionService textConvertor = new TextConvertionService();
         musicString = textConvertor.convert(rawText, initialBpm, initialInstrument);
     }
 }

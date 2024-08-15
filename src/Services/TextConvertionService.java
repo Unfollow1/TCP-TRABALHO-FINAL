@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Pattern;
 
-public class TextConvertorService implements ITextConvertorService {
+public class TextConvertionService implements ITextConvertionService {
     private int currentOctave;
     private final HashMap<String, Integer> instrumentHashMap = new HashMap<>();
 
-    public TextConvertorService() {
+    public TextConvertionService() {
         currentOctave = 1;
         populateInstrumentHashMap();
     }

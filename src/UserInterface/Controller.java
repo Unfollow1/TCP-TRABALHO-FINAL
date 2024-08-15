@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.*;
 import java.util.HashMap;
 import Constants.ConstraintsConstants;
-import Constants.MessagesToUserConstants;
+import Constants.AlertsConstants;
 import Constants.TextConstants;
 import MusicManager.Music;
 import MusicManager.MusicPlayer;
@@ -38,9 +38,9 @@ public class Controller {
             music.createMusicFromText(inputs.getTextInput(), inputs.getInitialBPM(), MusicConstants.HARPSICORD_VALUE);
 
             if(music.musicString != null){
-                createSuccessAlert(MessagesToUserConstants.SUCCESSFUL_MUSIC_CREATION);
+                createSuccessAlert(AlertsConstants.SUCCESSFUL_MUSIC_CREATION);
             } else {
-                createErrorAlert(MessagesToUserConstants.UNSUCCESSFUL_MUSIC_CREATION);
+                createErrorAlert(AlertsConstants.UNSUCCESSFUL_MUSIC_CREATION);
             }
         } else {
             createErrorAlert(MusicValidationService.errorMessage);
@@ -58,7 +58,7 @@ public class Controller {
         if(music.musicString != null){
             player.playMusic(music.musicString);
         } else {
-            createErrorAlert(MessagesToUserConstants.MUSIC_NOT_GENERATED);
+            createErrorAlert(AlertsConstants.MUSIC_NOT_GENERATED);
         }
     }
 
@@ -72,12 +72,12 @@ public class Controller {
 
         if(music.musicString != null) {
             if(player.downloadMusic(music.musicString, fileName)) {
-                createSuccessAlert(MessagesToUserConstants.SUCCESSFUL_DOWNLOAD);
+                createSuccessAlert(AlertsConstants.SUCCESSFUL_DOWNLOAD);
             } else {
-                createErrorAlert(MessagesToUserConstants.UNSUCCESSFUL_DOWNLOAD);
+                createErrorAlert(AlertsConstants.UNSUCCESSFUL_DOWNLOAD);
             }
         } else {
-            createErrorAlert(MessagesToUserConstants.MUSIC_NOT_GENERATED);
+            createErrorAlert(AlertsConstants.MUSIC_NOT_GENERATED);
         }
 
     }
@@ -104,14 +104,14 @@ public class Controller {
 
     private void createErrorAlert(String message) {
         Alert empty_string = new Alert(Alert.AlertType.ERROR);
-        empty_string.setTitle(MessagesToUserConstants.ERROR_MESSAGE);
+        empty_string.setTitle(AlertsConstants.ERROR_MESSAGE);
         empty_string.setHeaderText(message);
         empty_string.showAndWait();
     }
 
     private void createSuccessAlert(String message) {
         Alert empty_string = new Alert(Alert.AlertType.CONFIRMATION);
-        empty_string.setTitle(MessagesToUserConstants.SUCCESS_MESSAGE);
+        empty_string.setTitle(AlertsConstants.SUCCESS_MESSAGE);
         empty_string.setHeaderText(message);
         empty_string.showAndWait();
     }
@@ -120,7 +120,7 @@ public class Controller {
     private void chooseInputFile() {
         final Stage stage = new Stage();
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle(MessagesToUserConstants.OPEN_TEXT_FILE);
+        fileChooser.setTitle(AlertsConstants.OPEN_TEXT_FILE);
         File file = fileChooser.showOpenDialog(stage);
         if (file != null) {
             openFile(file);
