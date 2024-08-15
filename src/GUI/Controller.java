@@ -33,25 +33,25 @@ public class Controller {
     private final MusicPlayer player = new MusicPlayer();
     private final HashMap<String, Integer> instrumentHashMap = new HashMap<>();
 
-    @FXML
-    private void initialize() {
-        String[] instruments = {"Harpsichord", "Tubular Bells", "Agogo", "Pan Flute", "Church Organ"};
-        choiceBox.setItems(FXCollections.observableArrayList(instruments));
-
-        instrumentHashMap.put("Agogo", 113);
-        instrumentHashMap.put("Tubular Bells", 14);
-        instrumentHashMap.put("Pan Flute", 75);
-        instrumentHashMap.put("Church Organ", 19);
-        instrumentHashMap.put("Harpsichord", 6);
-    }
+//    @FXML
+//    private void initialize() {
+//        String[] instruments = {"Harpsichord", "Tubular Bells", "Agogo", "Pan Flute", "Church Organ"};
+//        choiceBox.setItems(FXCollections.observableArrayList(instruments));
+//
+//        instrumentHashMap.put("Agogo", 113);
+//        instrumentHashMap.put("Tubular Bells", 14);
+//        instrumentHashMap.put("Pan Flute", 75);
+//        instrumentHashMap.put("Church Organ", 19);
+//        instrumentHashMap.put("Harpsichord", 6);
+//    }
 
     @FXML
     private void OnGenerateMusicButtonClicked() {
         MusicValidationService musicValidationService = new MusicValidationService();
-        UserInputs userInputs = new UserInputs(getTextInput(), onSelectInstrument(), musicValidationService.parseBPM(getBPMInput()));
+        UserInputs userInputs = new UserInputs(getTextInput());
 
         if(validateUserInputs(musicValidationService, userInputs)) {
-            music.createMusicFromText(userInputs.getTextInput(), userInputs.getInitialBPM(), instrumentHashMap.get(userInputs.getInitialInstrument()));
+            music.createMusicFromText(userInputs.getTextInput(), userInputs.getInitialBPM(), 6);
 
             if(music.musicString != null){
                 createSuccessAlert(MessagesToUserConstants.SUCCESSFUL_MUSIC_CREATION);
@@ -113,20 +113,20 @@ public class Controller {
         return fileInput.getText();
     }
 
-    @FXML
-    private String getBPMInput() {
-        return bpmInput.getText();
-    }
+//    @FXML
+//    private String getBPMInput() {
+//        return bpmInput.getText();
+//    }
 
     @FXML
     private String getTextInput() {
         return textInput.getText();
     }
 
-    @FXML
-    private String onSelectInstrument() {
-        return choiceBox.getSelectionModel().getSelectedItem();
-    }
+//    @FXML
+//    private String onSelectInstrument() {
+//        return choiceBox.getSelectionModel().getSelectedItem();
+//    }
 
     private void createErrorAlert(String message) {
         Alert empty_string = new Alert(Alert.AlertType.ERROR);

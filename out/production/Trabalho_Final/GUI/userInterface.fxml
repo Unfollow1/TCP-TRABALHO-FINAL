@@ -17,15 +17,15 @@
               AnchorPane.topAnchor="0.0">
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="529.0" prefWidth="777.0">
          <Label layoutX="30.0" layoutY="57.0" text="Insira seu texto *" AnchorPane.leftAnchor="30.0"/>
-         <Label layoutX="30.0" layoutY="391.0" text="Instrumento inicial *" AnchorPane.leftAnchor="30.0"/>
-         <Label layoutX="30.0" layoutY="353.0" text="BPM inicial *" AnchorPane.leftAnchor="30.0"/>
+<!--         <Label layoutX="30.0" layoutY="391.0" text="Instrumento inicial *" AnchorPane.leftAnchor="30.0"/>-->
+<!--         <Label layoutX="30.0" layoutY="353.0" text="BPM inicial *" AnchorPane.leftAnchor="30.0"/>-->
          <TextArea fx:id="textInput" layoutX="30.0" layoutY="79.0" prefHeight="200.0" prefWidth="587.0"
                    style="-fx-background-color: #f5f5f5;" AnchorPane.leftAnchor="30.0"
                    AnchorPane.rightAnchor="30.0"/>
-         <TextField fx:id="bpmInput" layoutX="151.0" layoutY="349.0" prefHeight="25.0" prefWidth="80.0"
-                    AnchorPane.leftAnchor="151.0"/>
-         <ChoiceBox fx:id="choiceBox" layoutX="151.0" layoutY="387.0" prefHeight="25.0" prefWidth="172.0"
-                    AnchorPane.leftAnchor="151.0"/>
+<!--         <TextField fx:id="bpmInput" layoutX="151.0" layoutY="349.0" prefHeight="25.0" prefWidth="80.0"-->
+<!--                    AnchorPane.leftAnchor="151.0"/>-->
+<!--         <ChoiceBox fx:id="choiceBox" layoutX="151.0" layoutY="387.0" prefHeight="25.0" prefWidth="172.0"-->
+<!--                    AnchorPane.leftAnchor="151.0"/>-->
          <Button layoutX="642.0" layoutY="387.0" mnemonicParsing="false" style="-fx-background-color: #67B6B6;"
                  text="Gerar música!" textFill="WHITESMOKE" AnchorPane.bottomAnchor="30.0"
                  AnchorPane.rightAnchor="30.0" onMouseClicked="#OnGenerateMusicButtonClicked">
