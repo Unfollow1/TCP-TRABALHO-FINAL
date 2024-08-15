@@ -1,5 +1,6 @@
 package GUI;
 
+import Constants.JFugueMusicConstants;
 import javafx.fxml.FXML;
 import javafx.collections.FXCollections;
 import javafx.scene.control.Alert;
@@ -51,7 +52,7 @@ public class Controller {
         UserInputs userInputs = new UserInputs(getTextInput());
 
         if(validateUserInputs(musicValidationService, userInputs)) {
-            music.createMusicFromText(userInputs.getTextInput(), userInputs.getInitialBPM(), 6);
+            music.createMusicFromText(userInputs.getTextInput(), userInputs.getInitialBPM(), JFugueMusicConstants.HARPSICORD_VALUE);
 
             if(music.musicString != null){
                 createSuccessAlert(MessagesToUserConstants.SUCCESSFUL_MUSIC_CREATION);
