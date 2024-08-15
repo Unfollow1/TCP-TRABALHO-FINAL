@@ -6,23 +6,37 @@ import java.io.File;
 import java.io.IOException;
 
 public class MusicPlayer implements IMusicPlayer {
-    public void playMusic(String musicString){
-        new Thread(createThread(musicString)).start();
+
+    public void playMusic(String musicString) {
+        startMusicThread(musicString);
     }
+
+    private void startMusicThread(String musicString) {
+        new Thread(createMusicRunnable(musicString)).start();
+    }
+
     public boolean downloadMusic(String musicString, String filename) {
-        try{
-            File file = new File(filename + ".mid");
-            org.jfugue.pattern.Pattern pat = new org.jfugue.pattern.Pattern();
-            pat.add(musicString);
-            org.jfugue.midi.MidiFileManager.savePatternToMidi(pat, file);
+        try {
+            saveMusicToFile(musicString, filename);
             return true;
-        } catch (IOException e){
-            e.printStackTrace();
+        } catch (IOException e) {
+            handleIOException(e);
             return false;
         }
     }
 
-    private Runnable createThread (String musicString) {
+    private void saveMusicToFile(String musicString, String filename) throws IOException {
+        File file = new File(filename + ".mid");
+        org.jfugue.pattern.Pattern pattern = new org.jfugue.pattern.Pattern();
+        pattern.add(musicString);
+        org.jfugue.midi.MidiFileManager.savePatternToMidi(pattern, file);
+    }
+
+    private void handleIOException(IOException e) {
+        e.printStackTrace();
+    }
+
+    private Runnable createMusicRunnable(String musicString) {
         return () -> {
             Player player = new Player();
             Pattern pattern = new Pattern(musicString);
