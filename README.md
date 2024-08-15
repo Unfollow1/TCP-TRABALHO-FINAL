@@ -1,5 +1,5 @@
 INF01120 Técnicas de Construção de Programas
-Semestre: 2020/2
+Semestre: 2024/1
 Professor: Marcelo Soares Pimenta
 Descrição:
 
@@ -48,3 +48,7 @@ AudioSynthesizer: Classe que utiliza a biblioteca de áudio para tocar a música
 Módulo de Interface do Usuário
 UserInterface: Classe responsável pela interface do usuário.
 
+Bibliotecas usadas:
+• JUnit (tests)
+• JFugue (manipulação e tocador de música)
+• JavaFX ( GUI)
