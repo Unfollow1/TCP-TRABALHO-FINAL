@@ -158,10 +158,10 @@ public class TextConvertorService implements ITextConvertorService {
     }
 
     private int adjustOctave() {
-        if (currentOctave < ConstraintsConstants.MAX_OCTAVE) {
-            return currentOctave + 1;
+        if (currentOctave > ConstraintsConstants.MIN_OCTAVE) {
+            return currentOctave - 1;
         } else {
-            return ConstraintsConstants.MIN_OCTAVE;
+            return ConstraintsConstants.MAX_OCTAVE;
         }
     }
 }

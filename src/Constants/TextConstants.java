@@ -3,7 +3,7 @@ package Constants;
 public class TextConstants {
     public static final String EMPTY_STRING = "";
     public static final String BLANK_SPACE = " ";
-    public static final String INCREASE_OCTAVE_CHARACTERS = "?.";
+    public static final String INCREASE_OCTAVE_CHARACTERS = "(";
     public static final String AGOGO_CHARACTER = "!";
     public static final String HARPSICHORD_CHARACTERS = "i";
     public static final String TUBULAR_BELLS_CHARACTER = "\n";
