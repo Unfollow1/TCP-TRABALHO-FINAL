@@ -1,9 +1,9 @@
-package GUI;
+package UserInterface;
 
-public class UserInputs {
+public class Inputs {
     private final String textInput;
 
-    public UserInputs(String textInput) {
+    public Inputs(String textInput) {
         this.textInput = textInput;
     }
 

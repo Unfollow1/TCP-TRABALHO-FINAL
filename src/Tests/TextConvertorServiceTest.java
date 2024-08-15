@@ -1,4 +1,4 @@
-package Test;
+package Tests;
 
 import Services.TextConvertorService;
 import org.junit.Test;

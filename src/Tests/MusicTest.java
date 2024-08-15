@@ -1,6 +1,6 @@
-package Test;
+package Tests;
 
-import Musica.Music;
+import MusicManager.Music;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
