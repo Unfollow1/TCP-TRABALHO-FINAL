@@ -1,31 +1,50 @@
-# INF01120 Técnicas de Construção de Programas
-### Semestre: 2020/2
-#### Professor: Marcelo Soares Pimenta
+INF01120 Técnicas de Construção de Programas
+Semestre: 2020/2
+Professor: Marcelo Soares Pimenta
+Descrição:
 
-## Descrição
-O objetivo do trabalho é a definição, implementação, teste e depuração de um gerador de música a partir de texto.\
-O software recebe um texto como entrada e gera um conjunto de notas correspondentes ao texto segundo alguns parâmetros (timbre, ritmo – na forma de Beats por Minuto ou BPM, etc). Os parâmetros são definidos através de um mapeamento de texto para informações musicais. Parte do mapeamento já está definida abaixo. O restante deve ser definido pelo grupo e documentado para conhecimento do professor.
+1.1 OBJETIVO
+    O objetivo principal do programa é gerar uma música a partir de um arquivo de texto
+fornecido pelo usuário.
 
-Texto                | Nota
--------------------- | ------
-Letra A              | Nota Lá
-Letra B              | Nota Si
-Letra C              | Nota Do
-Letra D              | Nota Ré
-Letra E              | Nota Mi
-Letra F              | Nota Fá
-Letra G              | Nota Sol
-Letras a,b,c,d,e,f,g | Se o caractere anterior era NOTA (A a G), repete nota; caso contrário, silêncio ou pausa
-Caractere espaço     | Aumenta volume para o DOBRO do volume; se não puder aumentar, volta ao volume default (de início)
+1.2 CLASSES E MÓDULOS
+• Leitura de texto - Responsável por ler o texto de entrada que será convertido em
+música.
 
-Texto                                                                            | Ação
--------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------
-Caractere !                                                                      | Trocar instrumento para o instrumento General MIDI #114 (Agogo)
-Qualquer outra letra vogal (O ou o, I ou i, U ou u)                              | Trocar instrumento para o instrumento General MIDI #7 (Harpsichord)
-Qualquer outra outra letra consoante ((todas consoantes exceto as que são notas) | Se o caractere anterior era NOTA (A a G), repete nota; caso contrário, silêncio ou pausa
-Dígito                                                                           | Trocar instrumento para o instrumento General MIDI cujo numero é igual ao valor do instrumento ATUAL + valor do dígito
-Caractere ? OU caractere .                                                       | Aumenta UMA oitava; se não puder, aumentar, volta à oitava default (de início)
-Caractere NL                                                                     | Trocar instrumento para o instrumento General MIDI #15 (Tubular Bells) 
-Caractere ;                                                                      | Trocar instrumento para o instrumento General MIDI #76 (Pan Flute)
-Caractere ,                                                                      | Trocar instrumento para o instrumento General MIDI #20 (Church Organ)
-ELSE                                                                             | Se o caractere anterior era NOTA (A a G), repete nota; caso contrário, silêncio ou pausa
+• Processamento de texto - Converte o texto lido em notas musicais e parâmetros
+musicais conforme o mapeamento estabelecido.
+
+• Elementos Musicais - Define os tipos de elementos musicais (notas, pausas,
+alterações de volume e instrumentos).
+
+• Síntese de Áudio - Responsável por converter os elementos musicais em sons
+utilizando uma biblioteca de áudio.
+
+• Interface do Usuário - Fornece a interface para entrada de texto e controle do
+programa.
+
+• Módulo Principal - Gerencia a interação entre os outros módulos e coordena o
+fluxo do programa.
+
+Módulo Leitura de texto
+TextReader: Classe responsável por ler o texto de uma fonte (e.g., arquivo, campo
+de texto na interface).
+
+Módulo de Processamento de Texto
+TextProcessor: Classe responsável pelo processamento do texto.
+
+Módulo de Elementos Musicais
+MusicalElement: Classe base para todos os elementos musicais.
+Note: Classe derivada de MusicalElement para representar uma nota.
+Pause: Classe derivada de MusicalElement para representar uma pausa.
+VolumeChange: Classe derivada de MusicalElement para representar mudanças de
+volume.
+InstrumentChange: Classe derivada de MusicalElement para representar mudanças
+de instrumento.
+
+Módulo de Síntese de Áudio
+AudioSynthesizer: Classe que utiliza a biblioteca de áudio para tocar a música.
+
+Módulo de Interface do Usuário
+UserInterface: Classe responsável pela interface do usuário.
+
