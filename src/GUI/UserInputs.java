@@ -2,8 +2,6 @@ package GUI;
 
 public class UserInputs {
     private final String textInput;
-    private final String initialInstrument = "Harpsichord";
-    private final int initialBPM = 80;
 
     public UserInputs(String textInput) {
         this.textInput = textInput;
@@ -14,10 +12,12 @@ public class UserInputs {
     }
 
     public String getInitialInstrument() {
+        String initialInstrument = "Harpsichord";
         return initialInstrument;
     }
 
     public int getInitialBPM() {
+        int initialBPM = 80;
         return initialBPM;
     }
 }
