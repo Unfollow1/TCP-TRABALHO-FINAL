@@ -7,4 +7,5 @@ public class MusicConstants {
     public static final String VOLUME = ":CON(7,";
     public static final String CLOSE_PARENTHESIS = ")";
     public static final int HARPSICORD_VALUE = 6;
+    public static final int DEFAULT_BPM = 80;
 }
