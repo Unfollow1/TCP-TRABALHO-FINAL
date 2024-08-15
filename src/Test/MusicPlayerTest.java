@@ -1,6 +1,6 @@
 package Test;
 
-import Music.MusicPlayer;
+import Musica.MusicPlayer;
 import static org.junit.Assert.*;
 import org.junit.Test;
 

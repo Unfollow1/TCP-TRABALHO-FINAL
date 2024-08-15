@@ -2,7 +2,6 @@ package GUI;
 
 import Constants.JFugueMusicConstants;
 import javafx.fxml.FXML;
-import javafx.collections.FXCollections;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
@@ -14,8 +13,8 @@ import java.util.HashMap;
 import Constants.ConstraintsConstants;
 import Constants.MessagesToUserConstants;
 import Constants.TextConstants;
-import Music.Music;
-import Music.MusicPlayer;
+import Musica.Music;
+import Musica.MusicPlayer;
 import Services.MusicValidationService;
 import java.awt.Desktop;
 import java.io.File;

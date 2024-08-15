@@ -1,4 +1,4 @@
-package Music;
+package Musica;
 
 public interface IMusicPlayer {
     void playMusic(String musicString);

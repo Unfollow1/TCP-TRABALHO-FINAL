@@ -3,7 +3,7 @@ package Services;
 import Constants.ConstraintsConstants;
 import Constants.JFugueMusicConstants;
 import Constants.TextConstants;
-import Music.NoteEnum;
+import Musica.NoteEnum;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Pattern;
