@@ -7,8 +7,6 @@ public class ConstraintsConstants {
     public static final int WINDOW_WIDTH = 779;
     public static final int WINDOW_HEIGHT = 695;
     public static final int MAX_TEXT_SIZE = 1000;
-    public static final int MIN_BPM = 40;
-    public static final int MAX_BPM = 220;
     public static final int INVALID_BPM = -1;
     public static final int MIN_OCTAVE = 0;
     public static final int MAX_OCTAVE = 9;

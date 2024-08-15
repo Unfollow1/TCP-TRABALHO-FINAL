@@ -44,22 +44,4 @@ public class MusicValidationServiceTest {
     public void testValidInstrument() {
         assertTrue(musicValidationService.validateInstrument("Agogo"));
     }
-
-    @Test
-    public void testInvalidBPMType() {
-        assertEquals(-1, musicValidationService.parseBPM("this can't be transformed to int"));
-    }
-
-    @Test
-    public void testInvalidBPMRange() {
-        assertEquals(-1, musicValidationService.parseBPM("39"));
-        assertEquals(-1, musicValidationService.parseBPM("225"));
-    }
-
-    @Test
-    public void testValidBPMInput(){
-        assertEquals(40, musicValidationService.parseBPM("40"));
-        assertEquals(220, musicValidationService.parseBPM("220"));
-        assertEquals(100, musicValidationService.parseBPM("100"));
-    }
 }

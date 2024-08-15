@@ -38,29 +38,6 @@ public class MusicValidationService implements IMusicValidationService {
         return instrument == null;
     }
 
-    public int parseBPM(String bpmString) {
-        int bpm;
-        try {
-            bpm = parseBPMValue(bpmString);
-            if (isInvalidBPM(bpm)) {
-                setErrorMessage(MessagesToUserConstants.INVALID_BPM_VALUE);
-                bpm = ConstraintsConstants.INVALID_BPM;
-            }
-        } catch (NumberFormatException exception) {
-            setErrorMessage(MessagesToUserConstants.INVALID_BPM_TYPE);
-            bpm = ConstraintsConstants.INVALID_BPM;
-        }
-        return bpm;
-    }
-
-    private int parseBPMValue(String bpmString) {
-        return Integer.parseInt(bpmString);
-    }
-
-    private boolean isInvalidBPM(int bpm) {
-        return bpm < ConstraintsConstants.MIN_BPM || bpm > ConstraintsConstants.MAX_BPM;
-    }
-
     private void setErrorMessage(String message) {
         errorMessage = message;
     }
