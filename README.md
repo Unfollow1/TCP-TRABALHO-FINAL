@@ -1,6 +1,7 @@
 INF01120 Técnicas de Construção de Programas
 Semestre: 2024/1
 Professor: Marcelo Soares Pimenta
+Nomes: Gabriel Berta, Gleydson Campos, Lucca Claus, Murilo Sterchile
 Descrição:
 
 1.1 OBJETIVO
