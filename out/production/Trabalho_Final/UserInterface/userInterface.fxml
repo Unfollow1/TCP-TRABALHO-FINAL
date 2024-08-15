@@ -13,15 +13,21 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Controller">
    <SplitPane dividerPositions="0.7503607503607503" layoutX="615.0" orientation="VERTICAL" prefHeight="666.0" prefWidth="779.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="544.0" prefWidth="1278.0">
+         <!-- Texto em destaque -->
+         <Label layoutX="748.0" layoutY="400.0" text="GERE MÚSICAS A PARTIR DE TEXTOS" AnchorPane.topAnchor="400.0">
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font>
+         </Label>
          <!-- Adicionando a imagem à esquerda com ajuste de tamanho -->
-         <ImageView fitHeight="450.0" fitWidth="450.0" layoutX="31.0" layoutY="27.0" preserveRatio="true" AnchorPane.leftAnchor="31.0" AnchorPane.topAnchor="27.0">
+         <ImageView fitHeight="450.0" fitWidth="450.0" layoutX="126.0" layoutY="27.0" preserveRatio="true" AnchorPane.leftAnchor="126.0" AnchorPane.topAnchor="27.0">
             <image>
                <Image url="@pessoa.png" />
             </image>
          </ImageView>
          <!-- Margem à esquerda dos outros elementos -->
          <TextArea fx:id="textInput" layoutX="150.0" layoutY="79.0" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: none; -fx-border-color: black; -fx-border-width: 2px; -fx-border-radius: 6px; -fx-background-radius: 6px;" AnchorPane.rightAnchor="30.0" />
-         <Button layoutX="748.0" layoutY="27.0" mnemonicParsing="false" onMouseClicked="#chooseInputFile" style="-fx-background-color: black; -fx-text-fill: white; -fx-background-radius: 30px;" text="UPLOAD" textFill="WHITE">
+         <Button layoutX="748.0" layoutY="27.0" mnemonicParsing="false" onMouseClicked="#chooseInputFile" style="-fx-background-color: black; -fx-text-fill: white; -fx-background-radius: 30px;" text="UPLOAD FILE" textFill="WHITE">
             <font>
                <Font name="System Bold" size="20.0" />
             </font>
@@ -38,7 +44,7 @@
                <Font name="System Bold" size="14.0" />
             </font>
          </Button>
-         <Button layoutX="29.0" layoutY="49.0" mnemonicParsing="false" onMouseClicked="#OnPlayButtonClicked" prefHeight="39.0" prefWidth="632.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-background-radius: 30px; -fx-font-weight: bold;" text="Ouvir música" textFill="WHITESMOKE">
+         <Button layoutX="29.0" layoutY="49.0" mnemonicParsing="false" onMouseClicked="#OnPlayButtonClicked" prefHeight="39.0" prefWidth="632.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-background-radius: 30px; -fx-font-weight: bold;" text="Ouvir Música ♫" textFill="WHITESMOKE">
             <font>
                <Font name="System Bold" size="18.0" />
             </font>
