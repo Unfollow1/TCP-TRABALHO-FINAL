@@ -8,37 +8,60 @@ public class MusicValidationService implements IMusicValidationService {
     public static String errorMessage = null;
 
     public boolean validateString(String text) {
-        if(text.trim().equals(TextConstants.EMPTY_STRING)) {
-            errorMessage = MessagesToUserConstants.EMPTY_STRING_MESSAGE;
+        if (isEmptyString(text)) {
+            setErrorMessage(MessagesToUserConstants.EMPTY_STRING_MESSAGE);
             return false;
-        } else if(text.length() > ConstraintsConstants.MAX_TEXT_SIZE){
-            errorMessage = MessagesToUserConstants.TOO_LONG_STRING_MESSAGE;
+        } else if (isTooLongString(text)) {
+            setErrorMessage(MessagesToUserConstants.TOO_LONG_STRING_MESSAGE);
             return false;
         }
         return true;
+    }
+
+    private boolean isEmptyString(String text) {
+        return text.trim().equals(TextConstants.EMPTY_STRING);
+    }
+
+    private boolean isTooLongString(String text) {
+        return text.length() > ConstraintsConstants.MAX_TEXT_SIZE;
     }
 
     public boolean validateInstrument(String instrument) {
-        if(instrument == null) {
-            errorMessage = MessagesToUserConstants.NULL_INSTRUMENT;
+        if (isNullInstrument(instrument)) {
+            setErrorMessage(MessagesToUserConstants.NULL_INSTRUMENT);
             return false;
         }
         return true;
     }
 
-    public int parseBPM(String bpmString){
+    private boolean isNullInstrument(String instrument) {
+        return instrument == null;
+    }
+
+    public int parseBPM(String bpmString) {
         int bpm;
         try {
-            bpm = Integer.parseInt(bpmString);
-
-            if(bpm < ConstraintsConstants.MIN_BPM || bpm > ConstraintsConstants.MAX_BPM) {
-                errorMessage = MessagesToUserConstants.INVALID_BPM_VALUE;
+            bpm = parseBPMValue(bpmString);
+            if (isInvalidBPM(bpm)) {
+                setErrorMessage(MessagesToUserConstants.INVALID_BPM_VALUE);
                 bpm = ConstraintsConstants.INVALID_BPM;
             }
         } catch (NumberFormatException exception) {
-            errorMessage = MessagesToUserConstants.INVALID_BPM_TYPE;
+            setErrorMessage(MessagesToUserConstants.INVALID_BPM_TYPE);
             bpm = ConstraintsConstants.INVALID_BPM;
         }
         return bpm;
+    }
+
+    private int parseBPMValue(String bpmString) {
+        return Integer.parseInt(bpmString);
+    }
+
+    private boolean isInvalidBPM(int bpm) {
+        return bpm < ConstraintsConstants.MIN_BPM || bpm > ConstraintsConstants.MAX_BPM;
+    }
+
+    private void setErrorMessage(String message) {
+        errorMessage = message;
     }
 }
